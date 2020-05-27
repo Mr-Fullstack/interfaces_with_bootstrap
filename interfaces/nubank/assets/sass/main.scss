@@ -1,0 +1,288 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+$backgroud-defult:#81269d;
+$available-color: #9ed230;
+$current-color: #00bcc8;
+$pending-color: #ff9a00;
+body{
+    background: $backgroud-defult; 
+    font-family: 'Montserrat', sans-serif;
+}
+
+*{
+    transition: all .5s ease-in-out;
+}
+
+header{
+
+    height: 20vh;
+    
+    // .menu-open &{
+    //     height: 93vh;
+    // }
+
+    .container{
+        .row{
+
+            div:first-child{
+                height:48px ;
+                img{
+                    width: 10vw;
+                }
+
+                .account-name{
+                    text-transform: capitalize;
+                    color:#fff;
+                    font-weight: bold;
+                    margin-left:.5rem;
+                }
+            }
+
+            div:nth-child(2){
+
+                img{
+                    width: 4.5vw;
+                }
+
+                input{
+                    position: absolute;
+                    opacity: 0;
+                    top: 54px;
+                }
+                .config{
+                    display: none;
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}
+
+main{
+    display: grid;
+    height: 57vh;
+    overflow: scroll;
+    .container{
+        .row:last-child{
+            .box{
+                margin-bottom: 0rem;
+            }
+        }
+    }
+}
+
+.box{
+    width: 85%;
+    background: white;
+    height: 50vh;
+    margin-bottom: 1.2rem;
+    transition: all .2s ease-in-out;
+    position: relative;
+    border-radius: 3px;
+    .speendig-container{
+        height: 75%;
+
+
+        .balance-summary{
+            position: absolute;
+            top: 27%;
+            left: 10%;
+            color: $current-color;
+            font-weight: 500;
+            span{ 
+               font-size: 1.2rem ;
+               font-size: .7rem;
+               font-weight: 600;
+            }
+            .money{
+                font-weight: 400;
+                font-size: 2rem ;
+                letter-spacing: 2px;
+            }
+
+            .limite-available{
+                color: #000;
+                font-size: .90rem;
+                font-weight: 500;
+                .money-available{
+                    font-size: .90rem;
+                    color: $available-color;
+                }
+            }
+        }
+        .balance-current{
+            padding-top: 1.5rem;
+            padding-left: 1.5rem;
+            float: left;
+
+            span{
+                font-size: 0.90em;
+                color:#767676;
+                font-weight: 500;
+                margin-left: .5rem;
+            }
+            img{
+                width: 8vw;
+            }
+        }
+        .speending-bars{   
+            width: 2.8%;
+            float: right;
+            height: 100%;
+        }
+
+         .pending{
+                width:100%;
+                background: $pending-color;
+                min-height: 10%;
+                border-radius: 2px 1px 0px 0px;
+            }
+            .current{
+                width:100%;
+                background: $current-color;
+                min-height: 5%;
+            }
+    
+            .available{
+                width:100%;
+                min-width: 85%;
+                background: $available-color;
+                min-height: 85%;
+                border-radius: 0px 0px 2px 2px;
+            } 
+
+    }
+
+    .page-conta  &{
+        position: fixed;
+        width: 100%;
+        background: white;
+        height: 100vh;  
+        transition: all .2s ease-in-out;
+    }
+
+}
+
+.purchase-history{
+    background: #f7f7f7;
+    height: 25%;
+
+    img:first-child{
+        width: 7.5vw;
+    }
+    img:last-child{
+        width: 2vw;
+    }
+    a{
+        text-decoration: none;
+        color:#787878;
+    }
+
+    &-desc{
+        line-height: 14px;
+        font-size: .70em;
+        font-weight: 500;
+        p{
+            margin-bottom: 0px;
+        }
+    }
+}
+
+nav{
+    height: 23vh;
+    overflow: hidden;
+
+    .container{
+        height: 72.47%;
+    }
+}
+.menu-wrapper{
+    white-space: nowrap;
+    overflow-x:scroll ;
+    height: 100%;
+    width: 100%;
+    padding-left: 7.5%;
+    font-weight: 400;
+   & .menu-item{
+        width: 29.9%;
+        height: 93.77%;
+        display: inline-block;
+     
+
+        &:last-child{
+            margin-right: 6.5%;
+        }
+
+        a {
+            padding: .5rem;
+            width: 95%;
+            height: 100%;
+            background:  rgb(145, 64, 169);
+            color:white;
+            text-decoration: none;
+            border-radius: 3.5px;
+
+            span{
+                text-transform: capitalize;
+                width: 10ch;
+                display: block;
+                overflow: hidden;
+                white-space: pre-wrap;
+                font-size: .8em;
+                line-height: 15px;
+            }
+        }
+   }    
+}
+
+.icon{
+    width: 7vw;
+    height: 7vw;
+    background: rgba(204, 204, 204, 0.185);
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 0px;
+
+    &.recarga{
+        background: url("../images/recarga.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+    } 
+    
+    &.friends{
+        background: url("../images/friends.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }  
+    
+    &.cobrar{
+        background: url("../images/cobrar.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+    } 
+}
+
+
+.alert-screen-orientation{
+    display: none;
+    color: #fff;
+    font-size: 1em;
+
+    span{
+        position: fixed;
+        top: 43%;
+    }
+}
+@media screen and (orientation: landscape) {
+    main,header, nav , .menu-wrapper{
+          display: none;
+      }
+      .alert-screen-orientation{
+          display: block;
+      }
+  }
+
+  ::-webkit-scrollbar{
+      width: 0px;
+  }
